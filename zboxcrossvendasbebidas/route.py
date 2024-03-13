@@ -16,8 +16,9 @@ def login():
 
 
 @app.route('/criar_conta')
-def criar_conta():
-    return 'home'
+def criar_cadastro():
+    form_criarcadastro = FormCriarCadastro()
+    return render_template('criarCadastro.html', form_criarcadastro=form_criarcadastro)
 
 
 @app.route('/cadastra/bebidas')
