@@ -3,34 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Z Box Cross Club</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/vars.css">
+    <link rel="stylesheet" href="./styles/login.css">
 </head>
 <body>
-    <div class="container">
-         <div class="row">
-             <form method="Post" action="" class="border p-4 mt-2">
-                {{form_login.csrf_token}}
-                <legend>Login</legend>
-                 <fieldset>
-                    <div class="form-group">
-                        {{form_login.email.label(class="form-control-label")}}
-                        {{form_login.email(class="form-control")}}
-                    </div>
 
-                     <div class="form-group">
-                        {{form_login.senha.label(class="form-control-label")}}
-                         {{form_login.senha(class="form-control")}}
-                     </div>
-
-                     <div class="form-group">
-                        {{form_login.lembrar_dados.label(class="form-check-label")}}
-                          {{form_login.lembrar_dados(class="form-check-label")}}
-                     </div>
-
-                 </fieldset>
-
-                 {{form_login.botao_submit_login(class="btn btn-primary mt-2")}}
+    <div class="container-login">
+        <img class="beer" src="./assets/beer.png" alt="Bebidas">
+         <div class="container-form">
+            <h2 class="name-login">Login</h2>
+             <form method="Post" action="" class="form-login">
+                <label class="label-login" for="email">E-mail:</label>
+                <input class="input-login" type="email" id="email" name="email" required>
+        
+                <label class="label-login" for="password">Senha:</label>
+                <input class="input-login" type="password" id="password" name="password" required>
+        
+                <button class="submit-login" type="submit">Login</button>
 
              </form>
+             <a class="link-login" href="./criar_conta.html">Cadastre-se</a>
 
          </div>
 
