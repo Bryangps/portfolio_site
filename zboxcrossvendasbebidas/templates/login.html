@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Z Box Cross Club</title>
+</head>
+<body>
+    <div class="container">
+         <div class="row">
+             <form method="Post" action="" class="border p-4 mt-2">
+                {{form_login.csrf_token}}
+                <legend>Login</legend>
+                 <fieldset>
+                    <div class="form-group">
+                        {{form_login.email.label(class="form-control-label")}}
+                        {{form_login.email(class="form-control")}}
+                    </div>
+
+                     <div class="form-group">
+                        {{form_login.senha.label(class="form-control-label")}}
+                         {{form_login.senha(class="form-control")}}
+                     </div>
+
+                     <div class="form-group">
+                        {{form_login.lembrar_dados.label(class="form-check-label")}}
+                          {{form_login.lembrar_dados(class="form-check-label")}}
+                     </div>
+
+                 </fieldset>
+
+                 {{form_login.botao_submit_login(class="btn btn-primary mt-2")}}
+
+             </form>
+
+         </div>
+
+    </div>
+
+</body>
+</html>
