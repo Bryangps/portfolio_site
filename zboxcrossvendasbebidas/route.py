@@ -1,7 +1,7 @@
 from zboxcrossvendasbebidas import app
 from flask import redirect, request, render_template, flash, url_for
 from zboxcrossvendasbebidas.forms import FormLogin, FormCriarCadastro
-
+from zboxcrossvendasbebidas.models import Usuario
 
 @app.route('/')
 def home():
@@ -21,6 +21,8 @@ def login():
 def criar_cadastro():
     form_criarcadastro = FormCriarCadastro()
     if form_criarcadastro.validate_on_submit():
+        cry_senha =
+        usuario = Usuario(username=form_criarcadastro.username.data, email=form_criarcadastro.email.data, senha=)
         flash('Conta criada com sucesso', 'alert-success')
         return redirect(url_for('home'))
     return render_template('criarCadastro.html', form_criarcadastro=form_criarcadastro)
