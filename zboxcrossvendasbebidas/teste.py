@@ -9,9 +9,9 @@ from zboxcrossvendasbebidas.models import Usuario
 #
 
 # with app.app_context():
-#     meu_usuario = Usuario.query.all()
-#     print(meu_usuario)
+#     meu_usuario = Usuario.query.first()
+#     print(meu_usuario.senha)
 
-with app.app_context():
-    database.drop_all()
-    database.create_all()
+# with app.app_context():
+#     database.drop_all()
+#     database.create_all()

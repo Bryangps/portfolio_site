@@ -32,59 +32,68 @@
                 {{form_criarcadastro.csrf_token}}
                 <legend> Criar Cadastro</legend>
                 <fieldset>
+
                 <div class="form-group">
                     {{form_criarcadastro.username.label(class='form-control-label mt-2')}}
+
                     {%if form_criarcadastro.username.errors%}
                         {{form_criarcadastro.username(class='form-control is-invalid')}}
                         <div class="invalid-feedback">
                             {%for erro in form_criarcadastro.username.errors%}
-                                {{erro}
+                                {{erro}}
                             {%endfor%}
                         </div>
                     {%else%}
                         {{form_criarcadastro.username(class='form-control')}}
+                    {%endif%}
 
                 </div>
 
                 <div class="form-group">
                     {{form_criarcadastro.email.label(class='form-control-label')}}
+
                     {%if form_criarcadastro.email.errors%}
                         {{form_criarcadastro.email(class='form-control is-invalid')}}
                         <div class="invalid-feedback">
                             {%for erro in form_criarcadastro.email.errors%}
-                                {{erro}
+                                {{erro}}
                             {%endfor%}
                         </div>
                     {%else%}
                         {{form_criarcadastro.email(class='form-control')}}
+                    {%endif%}
 
                 </div>
 
                 <div class="form-group">
-                    {{form_criarcadastro.senha.label(class='form-control-label')}}{%if form_criarcadastro.senha.errors%}
+                    {{form_criarcadastro.senha.label(class='form-control-label')}}
+
                      {%if form_criarcadastro.senha.errors%}
                         {{form_criarcadastro.senha(class='form-control is-invalid')}}
                         <div class="invalid-feedback">
                             {%for erro in form_criarcadastro.senha.errors%}
-                                {{erro}
+                                {{erro}}
                             {%endfor%}
                         </div>
                     {%else%}
                         {{form_criarcadastro.senha(class='form-control')}}
+                    {%endif%}
 
                 </div>
 
                 <div class="form-group">
                     {{form_criarcadastro.confirmacao_senha.label(class='form-control-label')}}
+
                     {%if form_criarcadastro.confirmacao_senha.errors%}
                         {{form_criarcadastro.confirmacao_senha(class='form-control is-invalid')}}
                         <div class="invalid-feedback">
                             {%for erro in form_criarcadastro.confirmacao_senha.errors%}
-                                {{erro}
+                                {{erro}}
                             {%endfor%}
                         </div>
                     {%else%}
                         {{form_criarcadastro.confirmacao_senha(class='form-control')}}
+                    {%endif%}
 
                 </div>
                 </fieldset>
