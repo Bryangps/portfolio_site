@@ -13,21 +13,25 @@
         <img class="beer" src="./assets/beer.png" alt="Bebidas">
          <div class="container-form">
             <h2 class="name-login">Login</h2>
-             <form method="Post" action="" class="form-login">
+             <form method="Post" action="" class="form-login" onsubmit="return validatePassword()">
                 <label class="label-login" for="email">E-mail:</label>
                 <input class="input-login" type="email" id="email" name="email" required>
         
                 <label class="label-login" for="password">Senha:</label>
                 <input class="input-login" type="password" id="password" name="password" required>
+
+                <label class="label-login" for="confirm-password">Confirme sua senha:</label>
+                <input class="input-login" type="password" id="confirm-password" name="confirm-password" required>
         
                 <button class="submit-login" type="submit">Login</button>
 
              </form>
-             <a class="link-login" href="./criar_conta.html">Cadastre-se</a>
+             <a class="link-login" href="{{ url_for('criar_conta') }}">Cadastre-se</a>
 
          </div>
 
     </div>
 
+    <script src="./scripts/login.js"></script>
 </body>
 </html>
