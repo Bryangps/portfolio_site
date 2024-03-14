@@ -1,4 +1,6 @@
 :root{
     --font: 'segoe ui';
     --font2: 'Arial', sans-serif;
+
+    --background-login: rgba(255, 255, 255, 0.3);
 }
