@@ -2,19 +2,38 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/styles/reset.css">
+    <link rel="stylesheet" href="../static/styles/vars.css">
+    <link rel="stylesheet" href="../static/styles/login.css">
     <title>Z Box Cross Club</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 <body>
 
 <div class="container">
-    {% with mensagens = get_flashed_messages(with_categories=True)%}
-        {% if mensagens%}
-            {% for categoria, mensagem in mensagens%}
-                <div class="alert {{categoria}}">
-                    {{mensagem}}
+
+    <div class="login">
+        <button id="button-login" onclick="Login()">Login</button>
+        <button id="button-registration" onclick="Registration()">Cadastre-se</button>
+    </div>
+    <div id="container-login">
+        <div class="container-form">
+
+            <form method="POST" action="" class="form-login">
+
+                <label class="label-form" for="email-login">E-mail:</label>
+                <input class="input-form" type="email" id="email-login" name="email-login" required>
+
+                <label class="label-form" for="password-login">Senha:</label>
+                <input class="input-form" type="password" id="password-login" name="password-login" required>
+
+                <button id="submit-login" type="submit">Login</button>
+
+                <div class="checkbox-login">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label class="label-checkbox" for="remember">Lembrar dados de acesso</label>
                 </div>
+<<<<<<< HEAD
             {%endfor%}
         {%endif%}
     {% endwith%}
@@ -68,14 +87,40 @@
                 </fieldset>
 
                 {{form_login.botao_submit_login(class='btn btn-primary mt-5')}}
+=======
+>>>>>>> 6b74f6b52177f23c5d1fcf0b4a8b4cc07879c574
             </form>
-
         </div>
+    </div>  
+    <div id="container-registration">
+        <div class="container-form">
+            <form action="" method="post" class="form-registration" onsubmit="return verificarSenha(), validatePassword()">
+                <label class="label-form" for="name">Nome:</label>
+                <input class="input-form" type="text" id="name" name="name" required>
+            
+                <label class="label-form" for="email-registration">Email:</label>
+                <input class="input-form" type="email" id="email-registration" name="email-registration" required>
+            
+                <label class="label-form" for="password-registration">Senha:</label>
+                <input class="input-form" type="password" id="password-registration" name="password-registration" required>
 
+                <br>
+                <p id="minimo">Mínimo de 8 caracteres.</p>
+                <p id="maiuscula">Pelo menos 1 letra maiuscula.</p>
+                <p id="minuscula">Pelo menos 1 letra minuscula.</p>
+                <p id="numero">Pelo menos 1 número.</p>
+                <p id="especial">Pelo menos 1 caractere especial.</p>
+                <br>
+            
+                <label class="label-form" for="confirm-password">Confirmar Senha:</label>
+                <input class="input-form" type="password" id="confirm-password" name="confirm-password" required>
+            
+                <button id="submit-registration" type="submit">Cadastrar</button>
+            </form>
+        </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+ <script src="../static/scripts/login.js"></script>
 </body>
 </html>
