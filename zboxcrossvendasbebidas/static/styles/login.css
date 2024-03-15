@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.container{
+    width: 30%;
+    height: 100vh;
+    background-color: var(--background-login);
+    position: relative;
+}
+
+.container-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-login, .form-registration{
+    display: flex;
+    flex-direction: column;
+}
+
+.label-form{
+    color: var(--color-text);
+}
+
+.container .label-form, .input-form{
+    width: 90%;
+    margin: 5px auto;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 ;
+}
+
+#button-login, #button-registration{
+    border: none; 
+    background-color: var(--background-login);
+    width: 50%;
+    cursor: pointer;
+}
+
+#button-login{
+    border-bottom: 2px solid var(--color-highlight);
+    color: var(--color-highlight);
+} 
+
+#button-registration{
+    position: absolute;
+    right: 0;
+    border-bottom: 2px solid var(--color-text);
+    color: var(--color-text);
+}
+
+#submit-login{
+    padding: 5px;
+    width: 50px;
+    margin: 10px auto;
+}
+
+.container .checkbox-login{
+    
+    width: 90%;
+    margin: auto;
+}
+
+.label-checkbox{
+    color: var(--color-text);
+}
+
+#remember{
+    width: 20px;
+}
+
+#submit-registration{
+    padding: 5px;
+    width: 80px;
+    margin: 10px auto;
+}
+
+#container-registration{
+    display: none;
+}
+
+#minimo, #minuscula, #maiuscula, #numero, #especial{
+    color: var(--color-highlight);
+    width: 90%;
+    margin: auto;
+}
