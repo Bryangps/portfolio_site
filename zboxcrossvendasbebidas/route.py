@@ -2,10 +2,17 @@ from zboxcrossvendasbebidas import app, database, bcrypt
 from flask import redirect, request, render_template, flash, url_for
 from zboxcrossvendasbebidas.forms import FormLogin, FormCriarCadastro
 from zboxcrossvendasbebidas.models import Usuario
-from flask_login import login_user, logout_user, current_user
+from flask_login import login_user, logout_user, current_user, login_required
 
 
 @app.route('/')
+@login_required
+def index():
+    return redirect(url_for('login'))
+
+
+@app.route('/home')
+@login_required
 def home():
     return render_template('home.html')
 
@@ -38,16 +45,19 @@ def criar_cadastro():
 
 
 @app.route('/cadastra/bebidas')
+@login_required
 def cadastra_bebidas():
     return 'home'
 
 
-@app.route('/pefil')
+@app.route('/perfil')
+@login_required
 def perfil():
-    pass
+    return 'perfil'
 
 
 @app.route('/sair')
+@login_required
 def sair():
     logout_user()
     flash('Logout Feito com Sucesso', 'alert-seccess')
