@@ -3,6 +3,7 @@ var containerRegistration = document.getElementById('container-registration');
 var buttonLogin = document.getElementById('button-login');
 var buttonRegistration = document.getElementById('button-registration');
 
+//Navegação entre formulários
 function Registration(){
     containerLogin.style.display = 'none';
     containerRegistration.style.display = 'block';
@@ -32,7 +33,7 @@ var Minuscula = document.getElementById('minuscula');
 var Numero = document.getElementById('numero');
 var Especial = document.getElementById('especial');
 
-
+//Validação de senha
 function verificarSenhaForte() {
     var senha = Senha.value;
     if (senha.length < 8) {
@@ -62,7 +63,7 @@ function verificarSenha() {
         return false;
     }
 }
-
+//Alteração de cores para os requisitos da senha
 Senha.addEventListener("input", function () {
     var senha = this.value;
 
@@ -103,7 +104,7 @@ Senha.addEventListener("input", function () {
     }
 });
 
-
+//Validação de confirmação de senha
 function validatePassword(){
     var password = Senha.value;
     var confirmPassword = document.getElementById("confirm-password").value;
@@ -118,6 +119,7 @@ function validatePassword(){
         }
 }
 
+//Lembrar dados no localStorage
 window.onload = function() {
     var rememberedData = JSON.parse(localStorage.getItem('rememberedData'));
     if (rememberedData && rememberedData.remember) {
