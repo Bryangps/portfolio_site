@@ -42,3 +42,8 @@ th, td {
 #container-cadastro, #container-vendas, #container-estoque, #container-vcliente{
     display: none;
 }
+
+.name-logout{
+    display: flex;
+    flex-direction: row;
+}

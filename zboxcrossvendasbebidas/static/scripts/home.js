@@ -44,3 +44,10 @@ function vendasCliente(){
     containerVCliente.style.display = 'block';
     containerCadastro.style.display = 'none';
 }
+
+function alertLogout(){
+    if (!confirm('Tem certeza que deseja sair da sua conta?')) {
+        event.preventDefault();
+    }
+}
+

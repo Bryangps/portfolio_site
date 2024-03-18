@@ -19,8 +19,15 @@
         </nav>
     </div>
     <main>
-        <!--colocar nesse p o nome do cadastro de quem esta logado-->
-        <p id="nome-login"></p>
+        <div class="name-logout">
+            <!--colocar nesse p o nome do cadastro de quem esta logado-->
+            <p id="nome-login"></p>
+            <!--formulario para o cliente fazer logout-->
+            <form action="" method="post" id="logout" onsubmit="return alertLogout()">
+                <button type="submit">x</button>
+            </form>
+        </div>
+
         <div id="container-principal">
             <h2>container principal</h2>
         </div>
@@ -28,7 +35,7 @@
             <h2>Cadastro de Bebidas</h2>
             <Form method="post" action="" class="formulario">
                 <label for="nome-bebida" class="label-form">Nome:</label>
-                <input type="text" id="nome-bebida" name="nome-bebida" class="input-form">
+                <input type="text" id="nome-bebida" name="nome-bebida" class="input-form" required>
 
                 <label for="tipo-bebida" class="label-form">Tipo:</label>
                 <select name="tipo-bebida" id="tipo-bebida" class="input-form">
@@ -37,13 +44,13 @@
                 </select>
 
                 <label for="unidade-caixa" class="label-form">Unidades por caixa:</label>
-                <input type="number" id="unidade-caixa" name="unidade-caixa" class="input-form">
+                <input type="number" id="unidade-caixa" name="unidade-caixa" class="input-form" required>
 
                 <label for="gasto-caixa" class="label-form">Valor Gasto por caixa:</label>
-                <input type="text" id="gasto-caixa" name="gasto-caixa" class="input-form" oninput="formatarDinheiro(this)">
+                <input type="text" id="gasto-caixa" name="gasto-caixa" class="input-form" oninput="formatarDinheiro(this)" required>
 
                 <label for="venda-unidade" class="label-form">Valor de venda por unidade:</label>
-                <input type="text" id="venda-unidade" name="venda-unidade" class="input-form" oninput="formatarDinheiro(this)">
+                <input type="text" id="venda-unidade" name="venda-unidade" class="input-form" oninput="formatarDinheiro(this)" required>
 
                 <div class="botoes">
                     <button type="submit" class="botao">Cadastrar</button>
@@ -60,7 +67,7 @@
             <form action="" method="post" class="formulario">
 
                 <label for="venda-nome" class="label-form">Nome do cliente:</label> 
-                <input type="text" id="venda-nome" name="venda-nome" class="input-form">
+                <input type="text" id="venda-nome" name="venda-nome" class="input-form" required>
 
                 <label for="venda-tipo" class="label-form">Tipo de bebida:</label>
                 <select name="venda-tipo" id="venda-tipo" class="input-form">
@@ -75,10 +82,10 @@
                 </select>
 
                 <label for="venda-quantidade" class="label-form">Quantidade:</label> 
-                <input type="number" id="venda-quantidade" name="venda-quantidade" class="input-form">
+                <input type="number" id="venda-quantidade" name="venda-quantidade" class="input-form" required>
 
                 <label for="venda-valor" class="label-form">Valor de venda por unidade:</label>
-                <input type="text" id="venda-valor" name="venda-valor" class="input-form" oninput="formatarDinheiro(this)">
+                <input type="text" id="venda-valor" name="venda-valor" class="input-form" oninput="formatarDinheiro(this)" required>
 
                 <div class="botoes">
                     <button type="submit" class="botao" onclick="vendasCliente()">Confirmar Venda</button>
