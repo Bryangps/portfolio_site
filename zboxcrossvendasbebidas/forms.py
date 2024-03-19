@@ -15,7 +15,7 @@ class FormCriarCadastro(FlaskForm):
     username = StringField('Nome', validators=[DataRequired()])
     email = StringField('E-mail', validators=[DataRequired(), Email()])
     senha = PasswordField('Senha', validators=[DataRequired(), Length(5, 20)])
-    confirmacao_senha = PasswordField('Confirmção Da Senha', validators=[DataRequired(), Length(5,20), EqualTo('senha')])
+    confirmacao_senha = PasswordField('Confirmção Da Senha', validators=[DataRequired(), Length(5, 20), EqualTo('senha')])
     botao_submit_criarcadastro = SubmitField('Criar cadastro')
 
     def validate_email(self, email):
