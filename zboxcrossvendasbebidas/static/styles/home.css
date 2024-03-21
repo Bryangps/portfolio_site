@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation{
+    width: 30%;
+}
+
+main{
+    width: 70%;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    width: auto;
+}
+
+.nav-home{
+    display: flex;
+    flex-direction: column;
+}
+
+#container-cadastro, #container-vendas, #container-estoque, #container-vcliente{
+    display: none;
+}
+
+.name-logout{
+    display: flex;
+    flex-direction: row;
+}

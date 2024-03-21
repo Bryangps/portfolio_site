@@ -1,8 +1,166 @@
-{%extends 'base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/reset.css">
+    <link rel="stylesheet" href="../static/styles/vars.css">
+    <link rel="stylesheet" href="../static/styles/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Zbox Cross</title>
+</head>
+<body>
+    <div class="navigation">
+        <nav class="nav-home">
+            <button class="botao-nav" onclick="cadastroBebidas()">Cadastro de Bebidas</button>
+            <button class="botao-nav" onclick="vendasBebidas()">Vendas de Bebidas</button>
+            <button class="botao-nav" onclick="Estoque()">Estoque</button>
+            <button class="botao-nav" onclick="vendasCliente()">Vendas por cliente</button>
+        </nav>
+    </div>
+    <main>
+        <div class="name-logout">
+            <!--colocar nesse p o nome do cadastro de quem esta logado-->
+            <p id="nome-login"></p>
+            <!--formulario para o cliente fazer logout-->
+            <form action="" method="post" id="logout" onsubmit="return alertLogout()">
+                <button type="submit">x</button>
+            </form>
+        </div>
 
-{% block body %}
-<h1> wello word</h1>
+        <div id="container-principal">
+            <h2>container principal</h2>
+        </div>
+        <div id="container-cadastro">
+            <h2>Cadastro de Bebidas</h2>
+            <Form method="post" action="" class="formulario">
+                <label for="nome-bebida" class="label-form">Nome:</label>
+                <input type="text" id="nome-bebida" name="nome-bebida" class="input-form" required>
 
-<p>Pagina principal</p>
+                <label for="tipo-bebida" class="label-form">Tipo:</label>
+                <select name="tipo-bebida" id="tipo-bebida" class="input-form">
+                    <option value="alcoolica">Alcóolica</option>
+                    <option value="nao-alcoolica">Não Alcóolica</option>
+                </select>
 
-{% endblock %}
+                <label for="unidade-caixa" class="label-form">Unidades por caixa:</label>
+                <input type="number" id="unidade-caixa" name="unidade-caixa" class="input-form" required>
+
+                <label for="gasto-caixa" class="label-form">Valor Gasto por caixa:</label>
+                <input type="text" id="gasto-caixa" name="gasto-caixa" class="input-form" oninput="formatarDinheiro(this)" required>
+
+                <label for="venda-unidade" class="label-form">Valor de venda por unidade:</label>
+                <input type="text" id="venda-unidade" name="venda-unidade" class="input-form" oninput="formatarDinheiro(this)" required>
+
+                <div class="botoes">
+                    <button type="submit" class="botao">Cadastrar</button>
+                    <button type="reset"  class="botao">Cancelar</button>
+                </div>
+                <br>
+                <br>
+
+            </Form>
+        </div>
+
+        <div id="container-vendas">
+            <h2>Vendas de Bebidas</h2>
+            <form action="" method="post" class="formulario">
+
+                <label for="venda-nome" class="label-form">Nome do cliente:</label> 
+                <input type="text" id="venda-nome" name="venda-nome" class="input-form" required>
+
+                <label for="venda-tipo" class="label-form">Tipo de bebida:</label>
+                <select name="venda-tipo" id="venda-tipo" class="input-form">
+                    <option value="alcoolica">Alcóolica</option>
+                    <option value="nao-alcoolica">Não Alcóolica</option>
+                </select>
+
+                <label for="venda-bebida" class="label-form">Bebida:</label>
+                <select id="venda-bebida" name="venda-bebida" class="input-form">
+                    <!--iterar sobre as bebidas cadastradas para popular o select-->
+                    <option value=""></option>
+                </select>
+
+                <label for="venda-quantidade" class="label-form">Quantidade:</label> 
+                <input type="number" id="venda-quantidade" name="venda-quantidade" class="input-form" required>
+
+                <label for="venda-valor" class="label-form">Valor de venda por unidade:</label>
+                <input type="text" id="venda-valor" name="venda-valor" class="input-form" oninput="formatarDinheiro(this)" required>
+
+                <div class="botoes">
+                    <button type="submit" class="botao" onclick="vendasCliente()">Confirmar Venda</button>
+                    <button type="reset"  class="botao">Cancelar</button>
+                    <button type="button"  class="botao">Continuar Venda</button>
+                </div>
+                <br>
+                <br>
+            </form>
+        </div>
+
+        <div id="container-estoque">
+            <h2>Estoque</h2>
+            <form action="" method="post">
+                <input type="text" id="pesquisa-estoque" name="pesquisa-estoque" placeholder="Buscar bebidas...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <table id="tabela-estoque">
+                <thead>
+                    <tr>
+                        <th>Tipo </th>
+                        <th>Bebida</th>
+                        <th>Estoque</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- Iterar sobre o estoque para popular a table
+                        <td>Alcóolica</td>
+                        <td>Vinho</td>
+                        <td>30</td>-->
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+        </div>
+
+        <div id="container-vcliente">
+            <h2>Vendas por cliente</h2>
+            <form action="" method="post">
+                <input type="text" id="pesquisa-cliente" name="pesquisa-cliente" placeholder="Buscar cliente...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <table id="tabela-vendas">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Bebida</th>
+                        <th>Tipo</th>
+                        <th>Valor unitário</th>
+                        <th>Valor total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- Iterar sobre os clientes para popular a table
+                        <td>Cliente 1</td>
+                        <td>Vinho</td>
+                        <td>Alcóolica</td>
+                        <td>R$ 5,00</td>
+                        <td>R$ 5,00</td>-->
+                    </tr>
+                </tbody>
+            </table>
+            <div class="botoes">
+                <button type="button" class="botao" id="pix">Pix</button>
+                <button type="button"  class="botao" id="cartao-credito">Crédito</button>
+                <button type="button"  class="botao" id="cartao-debito">Débito</button>
+                <button type="button"  class="botao" id="cdinheiro">Dinheiro</button>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="../static/scripts/home.js"></script>
+</body>
+</html>
