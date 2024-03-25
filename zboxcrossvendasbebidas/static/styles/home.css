@@ -40,7 +40,7 @@ th, td {
     flex-direction: column;
 }
 
-#container-cadastro, #container-vendas, #container-estoque, #container-vcliente{
+#container-cadastro, #container-vendas, #container-estoque, #container-pagamento, #container-pendente, #container-efetuado, #container-busca, #container-tvendas{
     display: none;
 }
 
