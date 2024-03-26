@@ -76,6 +76,11 @@ body{
     font-family: var(--font);
     font-size: 20px;
     border-radius: 10px;
+    border: 2px solid var(--color-highlight);
+}
+
+#submit-login:hover, #submit-registration:hover{
+    background-color: var(--color-highlight);
 }
 
 .checkbox-login{
