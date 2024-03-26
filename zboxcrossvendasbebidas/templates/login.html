@@ -11,7 +11,7 @@
 <body>
 
     <div class="container">
-
+        <img class="logo" src="../static/Imagens/logo.png" alt="">
         <div class="login">
             <button id="button-login" onclick="Login()">Login</button>
             <button id="button-registration" onclick="Registration()">Cadastre-se</button>
@@ -26,13 +26,12 @@
 
                     <label class="label-form" for="password-login">Senha:</label>
                     <input class="input-form" type="password" id="password-login" name="password-login" required>
-
-                    <button id="submit-login" type="submit">Login</button>
-
                     <div class="checkbox-login">
                         <input type="checkbox" id="remember" name="remember">
                         <label class="label-checkbox" for="remember">Lembrar dados de acesso</label>
                     </div>
+                    <button id="submit-login" type="submit">Login</button>
+
                 </form>
             </div>
         </div>
@@ -64,6 +63,9 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div class="container2">
+        <h2>Descrição</h2>
     </div>
 
  <script src="../static/scripts/login.js"></script>

@@ -10,6 +10,8 @@ body{
     height: 100vh;
     background-color: var(--background-login);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .container-form{
@@ -24,17 +26,26 @@ body{
 
 .label-form{
     color: var(--color-text);
+    font-family: var(--font);
+}
+
+.input-form{
+    font-family: var(--font2);
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .container .label-form, .input-form{
-    width: 90%;
+    width: 80%;
     margin: 5px auto;
 }
 
 .login{
     display: flex;
-    flex-direction: column;
-    margin: 20px 0 ;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto 10px ;
 }
 
 #button-login, #button-registration{
@@ -42,6 +53,9 @@ body{
     background-color: var(--background-login);
     width: 50%;
     cursor: pointer;
+    font-family: var(--font);
+    font-size: 20px;
+    padding-bottom: 10px;
 }
 
 #button-login{
@@ -50,36 +64,33 @@ body{
 } 
 
 #button-registration{
-    position: absolute;
-    right: 0;
     border-bottom: 2px solid var(--color-text);
     color: var(--color-text);
 }
 
-#submit-login{
+#submit-login, #submit-registration{
     padding: 5px;
-    width: 50px;
+    width: 120px;
     margin: 10px auto;
+    background-color: var(--color-text);
+    font-family: var(--font);
+    font-size: 20px;
+    border-radius: 10px;
 }
 
-.container .checkbox-login{
-    
-    width: 90%;
-    margin: auto;
+.checkbox-login{
+    width: 80%;
+    margin: 20px auto;
 }
+
 
 .label-checkbox{
     color: var(--color-text);
+    font-family: var(--font2);
 }
 
 #remember{
     width: 20px;
-}
-
-#submit-registration{
-    padding: 5px;
-    width: 80px;
-    margin: 10px auto;
 }
 
 #container-registration{
@@ -88,6 +99,37 @@ body{
 
 #minimo, #minuscula, #maiuscula, #numero, #especial{
     color: var(--color-highlight);
-    width: 90%;
+    width: 80%;
     margin: auto;
+    font-family: var(--font2);
 }
+
+.logo{
+    width: 50px;
+    margin: 20px auto;
+}
+
+.container2{
+    width: 70%;
+}
+
+@media (max-width: 768px){
+    body{
+        flex-direction: column;
+    }
+    .container{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    body{
+        flex-direction: column;
+    }
+    .container{
+        width: 100%;
+    }
+    .container .label-form, .input-form, .login, .checkbox-login, #minimo, #minuscula, #maiuscula, #numero, #especial{
+        width: 60%;
+    }
+} 
