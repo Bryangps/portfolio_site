@@ -39,6 +39,7 @@
         <div id="container-registration">
             <div class="container-form">
                 <form action="" method="post" class="form-registration" onsubmit="return verificarSenha(), validatePassword()">
+                        {{ csrf_token }}
                     <label class="label-form" for="name">Nome:</label>
                     <input class="input-form" type="text" id="name" name="name" required>
 
@@ -59,7 +60,7 @@
                     <label class="label-form" for="confirm-password">Confirmar Senha:</label>
                     <input class="input-form" type="password" id="confirm-password" name="confirm-password" required>
 
-                    <button id="submit-registration" type="submit">Cadastrar</button>
+                    <button id="submit-registration" name = "submit-registration" type="submit">Cadastrar</button>
                 </form>
             </div>
         </div>
